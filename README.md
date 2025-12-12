@@ -1,4 +1,3 @@
-
 <div align="center">Leave Management System</div>
 A modern, clean, production-ready **Leave Management System API** built with:
 - Laravel 12
