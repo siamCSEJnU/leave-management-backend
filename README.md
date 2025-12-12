@@ -1,4 +1,4 @@
-<div align="center">Leave Management System</div>
+<h1 align="center">Leave Management System</h1>
 A modern, clean, production-ready **Leave Management System API** built with:
 - Laravel 12
 - JWT Authentication
