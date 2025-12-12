@@ -24,12 +24,35 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            'employee_id' => 'EMP' . $this->faker->unique()->numerify('###'),
+            'email' => $this->faker->unique()->safeEmail(),
+            // 'email_verified_at' => now(),
+            'password' => Hash::make('password'), // or bcrypt('password')
+            'first_name' => $this->faker->firstName(),
+            'last_name' => $this->faker->lastName(),
+            'role' => $this->faker->randomElement(['employee', 'manager', 'admin']),
+            'department' => $this->faker->optional()->word(),
+            'manager_id' => null,
+            'leave_balance' => $this->faker->numberBetween(10, 30),
+            'is_active' => true,
             'remember_token' => Str::random(10),
         ];
+    }
+
+    public function admin()
+    {
+        return $this->state(fn (array $attributes) => [
+            'role' => 'admin',
+            'email' => 'admin@company.com',
+        ]);
+    }
+
+    public function manager()
+    {
+        return $this->state(fn (array $attributes) => [
+            'role' => 'manager',
+            'email' => 'manager@company.com',
+        ]);
     }
 
     /**
