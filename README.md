@@ -39,4 +39,66 @@ git clone https://github.com/siam/leave-management-system.git
 cd leave-management-system
 composer install
 cp .env.example .env
-php artisan key:generate
+php artisan key:generate 
+
+Edit .env:
+envDB_DATABASE=leave_db
+DB_USERNAME=root
+DB_PASSWORD=
+Bashphp artisan migrate --seed
+php artisan serve
+Server running at: http://127.0.0.1:8000
+
+Default Login Credentials
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RoleEmailPasswordAdminadmin@company.com123456Managermanager@company.com123456Employeesifat@company.com123456Employeeshakil@company.com123456
+
+Tech Stack
+
+Laravel 12 – Backend Framework
+MySQL – Database
+tymon/jwt-auth – Secure Authentication
+Carbon – Smart date handling
+Eloquent ORM – Clean database interactions
+
+
+Author
+Siam Ahmed
+Dhaka, Bangladesh
+GitHub: @siam
+Built with passion in December 2025
+
+
+  Ready for production • Perfect for job interviews • Open to contributions
+
+```
+Carbon for date handling
